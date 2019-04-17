@@ -1,0 +1,29 @@
+
+spring:
+  #  数据库配置
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: "jdbc:mysql://192.168.0.47:3306/activiti?nullCatalogMeansCurrent=true"
+    username: test
+    password: 12345
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  main:
+    allow-bean-definition-overriding: true
+    #  端口配置
+    server:
+      tomcat:
+        uri-encoding: UTF-8
+      servlet:
+        session:
+          timeout: 10
+      port: 8081
+  activiti:
+    # 自动部署验证设置:true-开启（默认）、false-关闭
+    check-process-definitions: false
+
+server:
+  servlet:
+    context-path: "/activityApi"
